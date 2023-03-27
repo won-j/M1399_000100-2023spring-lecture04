@@ -1,9 +1,6 @@
 FROM jupyter/datascience-notebook
 
-## install imagemagick
 USER root
-
-RUN conda install -c conda-forge imagemagick
 
 ENV SHELL=/bin/bash
 
@@ -16,7 +13,7 @@ RUN fix-permissions /home/jovyan/.jupyter
 ## Install R libraries
 USER ${NB_UID}
 
-## Disable NB Classic
+## Disable NBclassic
 
 RUN jupyter server extension disable nbclassic  
 
